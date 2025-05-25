@@ -12,47 +12,32 @@ body {
     font-size: 16px;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1a73e8cc;
-    padding: 1em 0; /* solo arriba y abajo, sin padding lateral */
-    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.4);
-    z-index: 100;
-    backdrop-filter: blur(8px);
-}
-
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea a la izquierda */
-    padding-left: 0;
-    margin: 0;
-    gap: 32em; /* espacio entre logo y navegación */
+    justify-content: flex-start;
+    gap: 32em; /* esto queda para escritorio */
+    flex-wrap: wrap; /* permite que baje contenido en móvil */
 }
 
-/* Logo */
-.logo img {
-    height: 60px;         /* ajustá según necesites */
-    display: block;
-    margin-left: 0;       /* fuerza alineación izquierda */
-    padding-left: 60px;
+@media (max-width: 768px) {
+    .header-container {
+        gap: 1em;
+        justify-content: center;
+    }
+    .logo img {
+        height: 40px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+        text-align: center;
+    }
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* Navegación */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 3.5em;
-    margin: 0;
-    padding: 0;
-}
 
 nav a {
     color: white;
