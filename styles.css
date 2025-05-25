@@ -1,25 +1,27 @@
+/* Reset y base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background: rgba(26, 115, 232, 0.1);
+    color: #2c3e50;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1em 2em; /* padding lateral para no pegar a bordes */
-    background-color: #1a73e8;
+    background-color: #1a73e8; /* azul sólido para PC */
     box-shadow: 0 2px 8px rgba(26, 115, 232, 0.4);
     z-index: 100;
     backdrop-filter: none;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* separa logo y nav */
-    gap: 4em; /* espacio moderado */
-    flex-wrap: wrap;
-}
-
-.logo img {
-    height: 60px; /* tamaño razonable en PC */
 }
 
 @media (max-width: 768px) {
@@ -28,18 +30,28 @@ header {
         background-color: rgba(26, 115, 232, 0.75);
         backdrop-filter: blur(8px);
     }
+}
 
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* separa logo y nav en PC */
+    gap: 2em; /* espacio razonable */
+    flex-wrap: wrap;
+    max-width: 1200px; /* ancho máximo para PC */
+    margin: 0 auto; /* centrar contenido */
+}
+
+@media (max-width: 768px) {
     .header-container {
         gap: 1em;
         justify-content: center;
     }
-
     .logo img {
-        height: 40px; /* logo más pequeño en móvil */
+        height: 40px;
         padding-left: 0;
         margin-left: 0;
     }
-
     nav ul {
         flex-direction: column;
         gap: 1em;
@@ -47,3 +59,28 @@ header {
         text-align: center;
     }
 }
+
+.logo img {
+    height: 60px; /* tamaño razonable en PC */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #fff;
+    color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 6px #1a73e8aa;
+}
+
+/* ... el resto de tu CSS sigue igual ... */
