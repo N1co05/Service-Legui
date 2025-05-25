@@ -12,6 +12,18 @@ body {
     font-size: 16px;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a73e8cc;
+    padding: 1em 0; /* solo arriba y abajo, sin padding lateral */
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.4);
+    z-index: 100;
+    backdrop-filter: blur(8px);
+}
+
 .header-container {
     display: flex;
     align-items: center;
