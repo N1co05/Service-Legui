@@ -32,25 +32,32 @@ header {
     }
 }
 
+/* Contenedor header: layout desktop horizontal */
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* separar logo y menú en PC */
+    justify-content: space-between; /* logo a la izquierda, nav a la derecha */
     gap: 2em;
-    flex-wrap: wrap;
-    max-width: 1200px; /* ancho máximo para PC */
-    margin: 0 auto; /* centrar contenido */
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: nowrap; /* evitar que baje contenido en PC */
 }
 
+/* Nav ul horizontal en PC */
+nav ul {
+    display: flex;
+    gap: 1.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Móvil: nav vertical centrado y con gap */
 @media (max-width: 768px) {
     .header-container {
-        gap: 1em;
+        flex-wrap: wrap; /* permitir que nav baje */
         justify-content: center;
-    }
-    .logo img {
-        height: 40px;
-        padding-left: 0;
-        margin-left: 0;
+        gap: 1em;
     }
     nav ul {
         flex-direction: column;
